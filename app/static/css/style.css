@@ -1,0 +1,138 @@
+@font-face{
+	font-family: Avenir-Next;
+	src: url('static/Avenir-Next-Font/AvenirNextLTPro-Regular.otf');
+	font-weight: 500;
+}
+@font-face{
+	font-family: Avenir-Next;
+	src: url('static/Avenir-Next-Font/AvenirNextLTPro-It.otf');
+	font-weight: 500;
+	font-style: italic;
+}
+@font-face{
+	font-family: Avenir-Next;
+	src: url('static/Avenir-Next-Font/AvenirNextLTPro-Demi.otf');
+	font-weight: 600;
+}
+@font-face{
+	font-family: Avenir-Next;
+	src: url('static/Avenir-Next-Font/AvenirNextLTPro-Bold.otf');
+	font-weight: 900;
+}
+@font-face{
+	font-family: Avenir-Next-Condensed;
+	src: url('static/Avenir-Next-Font/AvenirNextLTPro-BoldCn.otf');
+	font-weight: 900;
+	font-stretch: condensed;
+}
+@font-face{
+	font-family: Avenir-Next-Condensed;
+	src: url('static/Avenir-Next-Font/AvenirNextLTPro-DemiCn.otf');
+	font-weight: 600;
+	font-stretch: condensed;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	font-family: Avenir-Next, sans-serif;
+	font-weight: 500;
+	font-size: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+	letter-spacing: 0.39em;
+	color: #4a4a4a;
+	font-family: Avenir-Next;
+	font-weight: 600;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color 0.1s ease-in;
+	text-align: center;
+}
+
+a:hover {
+	color: #171717;
+}
+
+
+a.header-link {
+	color: #fff;
+	padding: 17px 15px 15px 20px;
+}
+
+a.link-box {
+	outline: solid 0px #fff;
+	transition: outline-width 0.2s ease-in;
+}
+
+a.link-box:hover {
+	outline-width: 2px;
+}
+
+.landing {
+	background-color: #444757;
+	width: 100vw;
+	height: 70vw;
+	clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+	-webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+	z-index: -1;
+}
+
+nav.landing-nav{
+	padding: 4vw;
+}
+
+.center {
+	text-align: center;
+}
+
+.nav-left {
+	float: left;
+}
+
+.nav-left li + li {
+	margin-left: 35px;
+}
+
+.nav-right {
+	float: right;
+}
+
+ul.header-list li {
+	display: inline;
+}
+
+.nav-right li + li {
+	margin-left: 35px;
+}
+
+img.landing-img {
+	height: 100%;
+	margin-left: 4vw;
+	margin-top: 5vw;
+}
+
+.header-text {
+	font-family: "Avenir Next", Avenir-Next, sans-serif;
+	font-weight: 900;
+	font-size: 5vw;
+	margin-top: 20vw;
+	margin-left: 52vw;
+	width: -webkit-max-content;
+	color: #fff;
+	position: absolute;
+}
+
+.lime {
+	color: #E1FF3A;
+}

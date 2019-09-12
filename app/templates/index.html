@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Steven John</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')|autoversion }}">
+</head>
+<body>
+	<header class="landing">
+		<nav class="landing-nav">
+			<ul class="header-list">
+				<li class="nav-left"><a href="#" class="header-link">Steven John</a></li>
+				<div class="nav-right">
+					<li><a href="#" class="header-link link-box">Blog</a></li>
+					<li><a href="#" class="header-link link-box">Projects</a></li>
+					<li><a href="#" class="header-link link-box">Contact Me</a></li>
+				</div>
+			</ul>
+		</nav>
+		<div>
+			<h1 class="header-text">My name is Steven.<br><span class="lime">I am ________________</span></h1>
+			<img src="{{ url_for('static', filename='main_landing_1.png') }}" alt="Steven's picture" class="landing-img">
+		</div>
+	</header>
+</body>
+</html>

@@ -2,7 +2,9 @@
 <head>
 	<title>Steven John</title>
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')|autoversion }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
 	<header class="landing">
 		<nav class="landing-nav">
@@ -15,10 +17,21 @@
 				</div>
 			</ul>
 		</nav>
-		<div>
-			<h1 class="header-text">My name is Steven.<br><span class="lime">I am ________________</span></h1>
-			<img src="{{ url_for('static', filename='main_landing_1.png') }}" alt="Steven's picture" class="landing-img">
-		</div>
+		<span class="col-9"><h1 class="header-text">My name is Steven.<br><span class="lime">I am ________________</span></h1></span>
+		<span class="col-3"><img src="{{ url_for('static', filename='main_landing_1.png') }}" alt="Steven's picture" class="landing-img"></span>
 	</header>
+	<div class="container">
+		<h1 class="sub-header">About Me</h1>
+		<div class="col-5">
+			<div class="container">
+				Filium morte multavit si sine causa? quae fuerit causa, nollem me ab illo inventore veritatis et aut dolores eos, qui dolorem aspernari ut ita ruant itaque turbent, ut aut rerum facilis est et dolorem? sunt autem nusquam hoc epicurus in armatum hostem impetum fecisse aut.
+			</div>
+		</div>
+		<div class="col-5">
+			<div class="container">
+				Filium morte multavit si sine causa? quae fuerit causa, nollem me ab illo inventore veritatis et aut dolores eos, qui dolorem aspernari ut ita ruant itaque turbent, ut aut rerum facilis est et dolorem? sunt autem nusquam hoc epicurus in armatum hostem impetum fecisse aut.
+			</div>
+		</div>
+	</div>
 </body>
 </html>

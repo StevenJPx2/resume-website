@@ -7,6 +7,7 @@ import wget
 
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     form = ContactForm()
     if form.validate_on_submit():

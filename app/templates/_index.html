@@ -15,20 +15,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 {% endblock %}
 
+{% block scripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js')|autoversion }}"></script>
+{% endblock %}
+
 {% block navbar %}
-    <nav class="navbar-nav navbar-expand-lg bg-dark-c pad-navbar">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="#" class="link-ext main-link header-link">Steven John</a></li>
-            </ul>
-            <ul class="navbar-nav li-spacing">
-                    <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Projects</a></li>
-                    <li class="nav-item"><a href="#contact-me" class="link-ext main-link header-link link-box">Contact Me</a></li>
+    <nav class="navbar navbar-expand-lg bg-dark-c pad-navbar position-absolute z-7 w-100">
+        <a href="#" class="navbar-brand link-ext main-link header-link">Steven John</a></li>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <section class="mod model-1">
+                <div class="menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+              </section>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto li-spacing">
+                <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Blog</a></li>
+                <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Projects</a></li>
+                <li class="nav-item"><a href="#contact-me" class="link-ext main-link header-link link-box">Contact Me</a></li>
             </ul>  
         </div>
-                   
     </nav>
+
 {% endblock %}
 
 {% block content %}
@@ -40,31 +54,33 @@
 
 
     <div class="my-container container-fluid shadow-lg bg-light z-3">
-        <h1 class="sub-header">About Me</h1>
-        <div class="row align-items-center">
-            <div class="col pad">
-                <p class="large height-l">Filium morte multavit si sine causa? 
-                    quae fuerit causa, 
-                    nollem me ab illo inventore veritatis et aut dolores eos, 
-                    qui dolorem aspernari ut ita ruant itaque turbent, ut aut 
-                    rerum facilis est et dolorem? sunt autem nusquam 
-                    hoc epicurus in armatum hostem impetum fecisse aut.</p>
-            </div>
-            <div class="col pad border-left">
-                <a href="#">
-                    <img src="{{ url_for('static', filename='blog_logo.svg') }}" alt="Steven's Blog" id="blog-logo">
-                </a><br>
-                <div id="blog-sub-heading">Most Recent Post</div>
-                <div id="blog-post-heading">Finished my most anticipated project!</div>
-                <div id="blog-post-details">Sep 9, 2019 - 8 min read</div>
-                <div id="read-more-container">
-                    <p class="large">Filium morte multavit si sine causa? quae fuerit causa, 
-                        nollem me ab illo inventore veritatis et aut dolores eos, qui dolorem 
-                        aspernari ut ita ruant itaque turbent, ut aut rerum facilis est et 
-                        dolorem? sunt autem nusquam hoc epicurus in armatum hostem impetum 
-                        fecisse aut.</p>
-                    </div>
-                <div id="read-more-link"><a href="#" class="link-ext main-link">Read more</a></div>
+        <div class="container">
+            <h1 class="sub-header" id="startchange">About Me</h1>
+            <div class="row align-items-center">
+                <div class="col-lg pad">
+                    <p class="large height-l" id="about-me-p">Filium morte multavit si sine causa? 
+                        quae fuerit causa, 
+                        nollem me ab illo inventore veritatis et aut dolores eos, 
+                        qui dolorem aspernari ut ita ruant itaque turbent, ut aut 
+                        rerum facilis est et dolorem? sunt autem nusquam 
+                        hoc epicurus in armatum hostem impetum fecisse aut.</p>
+                </div>
+                <div class="col-lg pad">
+                    <a href="#">
+                        <img src="{{ url_for('static', filename='blog_logo.svg') }}" alt="Steven's Blog" id="blog-logo">
+                    </a><br>
+                    <div id="blog-sub-heading">Most Recent Post</div>
+                    <div id="blog-post-heading">Finished my most anticipated project!</div>
+                    <div id="blog-post-details">Sep 9, 2019 - 8 min read</div>
+                    <div id="read-more-container">
+                        <p class="large">Filium morte multavit si sine causa? quae fuerit causa, 
+                            nollem me ab illo inventore veritatis et aut dolores eos, qui dolorem 
+                            aspernari ut ita ruant itaque turbent, ut aut rerum facilis est et 
+                            dolorem? sunt autem nusquam hoc epicurus in armatum hostem impetum 
+                            fecisse aut.</p>
+                        </div>
+                    <div id="read-more-link"><a href="#" class="link-ext main-link">Read more</a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -72,70 +88,75 @@
 
 
     <div class="my-container container-fluid shadow-lg z-2">
-        <h1 class="sub-header">Projects</h1>
-        <div class="row align-items-center">
+        <div class="container">
+            <h1 class="sub-header">Projects</h1>
+            <div class="row align-items-center">
 
-            <div class="col">
-                <div class="card mb-3" style="max-height: 200px;">
-                    <div class="row no-gutters position-relative">
-                        <div class="col-md-4">
-                            <a href="" class="img-play-link">
-                                <img src="{{ url_for('static', filename='placeholder-img.jpg') }}" class="card-img placeholder-img img-ext" alt="...">
-                                <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <a href="#" class="stretched-link link-ext"><h5 class="card-title">Card title</h5></a>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="col-lg">
+                    <div class="card mb-3" style="max-width: 1000px;">
+                        <div class="row no-gutters position-relative">
+                            <div class="col-md-5">
+                                <a href="" class="img-play-link">
+                                    <img src="{{ url_for('static', filename='placeholder-img.jpg') }}" class="card-img placeholder-img img-ext" alt="...">
+                                    <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <a href="#" class="stretched-link link-ext"><h5 class="card-title">Card title</h5></a>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="card mb-3" style="max-height: 200px;">
-                    <div class="row no-gutters position-relative">
-                        <div class="col-md-4">
-                            <a href="" class="img-play-link">
-                                <img src="{{ url_for('static', filename='placeholder-img.jpg') }}" class="card-img placeholder-img img-ext" alt="...">
-                                <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
-                            </a>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <a href="#" class="stretched-link link-ext"><h5 class="card-title">Card title</h5></a>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <div class="col-lg">
+                    <div class="card mb-3" style="max-width: 1000px;">
+                        <div class="row no-gutters position-relative">
+                            <div class="col-md-5">
+                                <a href="" class="img-play-link">
+                                    <img src="{{ url_for('static', filename='placeholder-img.jpg') }}" class="card-img placeholder-img img-ext" alt="...">
+                                    <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
+                                </a>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <a href="#" class="stretched-link link-ext"><h5 class="card-title">Card title</h5></a>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            
             </div>
-
+        
+            <div class="row justify-content-md-center">
+                <div class="col-md-auto pad-full">
+                    <a href="#" class="link-ext main-link">Check out more projects</a>
+                </div>
+            </div>
         </div> 
-        <div class="row justify-content-md-center">
-            <div class="col-md-auto pad-full">
-                <a href="#" class="link-ext main-link">Check out more projects</a>
-            </div>
-        </div>
     </div>
 
     <div class="my-container container-fluid shadow-lg bg-light z-1 no-clip">
-        <h1 class="sub-header" id="contact-me">Contact Me</h1>
-        {% if form %}
-        <div class="row justify-content-md-center">
-            <div class="col-md-4">
-                {{ wtf.quick_form(form) }}
+        <div class="container">        
+            <h1 class="sub-header" id="contact-me">Contact Me</h1>
+            {% if form %}
+            <div class="row justify-content-md-center">
+                <div class="col-md-6">
+                    {{ wtf.quick_form(form) }}
+                </div>
             </div>
+            {% endif %}
         </div>
-        {% endif %}
     </div>
 
-    <div class="container-fluid center v-middle position-relative z-2 pad-full" id="landing-footer">
-        <p class="large">Made with ❤️ using Python and Flask.</p>
+    <div class="container-fluid center v-middle position-relative z-2" id="landing-footer">
+        <p class="medium no-margin">Made with ❤️ using Python and Flask.</p>
     </div>
 
 

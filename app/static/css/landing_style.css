@@ -1,0 +1,277 @@
+
+/* GENERAL */
+
+.my-container {
+	padding-top: 11rem;
+	padding-bottom: 8rem;
+	margin-bottom: -10rem;
+	clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+	-webkit-clip-path: polygon(0 0%, 100% 0%, 100% 90%, 0% 100%);
+	background-color: #fff;
+	position: relative;
+}
+ 
+.my-shadow {
+	filter: drop-shadow(0px 5px 60px rgba(0,0,0,.17));
+	position: relative;
+}
+
+/* ------------------------- */
+
+
+
+/* NAVBAR */
+
+a.header-link {
+	color: #fff !important;
+	padding: 17px 15px 15px 20px;
+}
+
+a.header-link:hover {
+	color: #fff !important;
+}
+
+a.link-box {
+	outline: solid 0px #fff;
+	transition: outline-width 0.2s ease-in !important;
+}
+
+a.link-box:hover {
+	outline-width: 2px;
+	text-decoration: none;
+}
+
+a.link-ext {
+	color: var(--text-color-dark);
+	transition: color 0.1s ease-in;
+}
+
+a.link-ext:hover {
+	color: #171717;
+}
+
+.bg-dark-c {
+	background-color: var(--background-color-1) !important;
+}
+
+.pad-navbar {
+	padding: 4rem !important;
+	padding-bottom: 2.5rem !important;
+	padding-top: 3.5rem !important;
+}
+
+/* ----------------------------- */
+
+
+
+/* HEADER */
+
+@media only screen and (max-width:768px){
+	.header-text {
+		font-size: 3rem;
+		top: 39rem;
+	}
+	
+	#landing {
+		padding-top: 2rem !important;
+	}
+
+}
+
+
+@media only screen and (min-width:769px) and (max-width:1499px){
+	.header-text {
+		font-size: 4rem;
+		top: 39rem;
+	}
+
+	#landing {
+		padding-top: 0px !important;
+	}
+}
+
+@media only screen and (min-width:1500px) {
+	.header-text {
+		font-size: 4rem;
+		top: 29rem;
+		left: 51rem;
+		margin: 0 !important
+
+	}
+
+	img.landing-img {
+		margin-left: 4rem !important;
+	}
+
+	#landing {
+		padding-top: 2rem !important;
+	}
+}
+
+#landing {
+	padding-bottom: 0px !important;
+}
+
+img.landing-img {
+	height: 50rem;
+}
+
+.header-text {
+	font-family: "Avenir Next", Avenir-Next, sans-serif;
+	font-weight: 900;
+	width: -webkit-max-content;
+	color: #fff;
+	position: relative;
+}
+
+#lime {
+	color: #E1FF3A;
+}
+
+/* ----------------------------- */
+
+
+
+
+/* ABOUT ME */
+
+@media only screen and (max-width:1199px){
+	#about-me-p {
+		margin-bottom: 3rem !important;
+	}
+
+	.border-left {
+		border: 0 !important;
+	}
+
+	.pad-right {
+		padding-right: 0 !important;
+	}
+	
+	.pad-left {
+		padding-left: 0 !important;
+	}
+	
+}
+
+@media only screen and (min-width:1200px){
+	.border-bottom {
+		border: 0 !important;
+	}
+	
+	.pad-top {
+		padding-top: 0 !important;
+	}
+}
+
+#blog-logo {
+	height: 3.3em;
+	margin-bottom: 0.8em;
+}
+
+.fill {
+	background-color: #4a4a4a;
+}
+
+#blog-sub-heading {
+	font-family: Avenir-Next, sans-serif;
+	font-weight: 500;
+	font-size: 1.3em;
+	letter-spacing: 0.32em;
+	text-transform: uppercase;
+	color: #A5A5A5;
+	margin-bottom: 1.5em;
+}
+
+#blog-post-heading {
+	font-size: 2.2em;
+	font-weight: 900;
+	line-height: 1.1em;
+	margin-bottom: 0.2em;
+}
+
+#blog-post-details {
+	font-size: 1.07em;
+	font-style: italic;
+	margin-bottom: 1.5em;
+}
+
+#read-more-container {
+	max-height: 11.4rem;
+	clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+	-webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+#read-more-gradient {
+	height: 23%;
+	width: 40%;
+	position: absolute;
+	background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,1))
+}
+
+#read-more-link {
+	text-align: center;
+	transform: translateY(-110%);
+	width: auto;
+	background-color: #fff;
+	box-shadow: 0px -3px 60px 62px #fff;
+}
+
+/* ----------------------------- */
+
+
+
+
+/* PROJECTS */
+
+@media only screen and (max-width:768px) {
+	.img-ext {
+		height: auto;
+	}	
+} 
+
+@media only screen and (min-width:769px) {
+	.img-ext {
+		height: 14rem;
+	}	
+} 
+
+
+.placeholder-img {
+	background-color: #171717;
+	object-fit: contain;
+	-o-object-fit: contain;
+}
+
+
+.img-play {
+	position: absolute;
+    display: none;
+    top: 39%; 
+	left: 0%;
+    width: 150px;
+	margin: 0 auto; 
+    right: 0px;
+    z-index: 100
+}
+
+.img-play-link:hover .img-play {
+	display: block;
+}
+
+/* ----------------------------- */
+
+
+
+/* FOOTER */
+
+
+#landing-footer {
+	background-color: var(--background-color-1);
+	color: #fff;
+	padding: 3rem 4rem 3rem 4rem;
+}
+
+
+
+/* ------------------------------ */

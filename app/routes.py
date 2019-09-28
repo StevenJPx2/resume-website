@@ -12,7 +12,13 @@ def index():
     form = ContactForm()
     if form.validate_on_submit():
         return redirect(url_for('index'))
-    return render_template('_index.html', form=form)
+    return render_template('index.html', form=form)
+
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
 
 
 @app.template_filter('autoversion')

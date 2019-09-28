@@ -1,0 +1,49 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    Steven's Blog
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')|autoversion }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog_style.css')|autoversion }}">
+{% endblock %}
+
+{% block metas %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+{% endblock %}
+
+{% block scripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/blog_script.js')|autoversion }}"></script>
+{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-expand-md pad-navbar position-absolute z-7 w-100">
+    <a href="#" class="navbar-brand link-ext main-link header-link">Steven John</a></li>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <section class="mod model-1">
+            <div class="menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            </section>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto li-spacing">
+            <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Blog</a></li>
+            <li class="nav-item"><a href="{{ url_for('blog') }}" class="link-ext main-link header-link link-box">Projects</a></li>
+            <li class="nav-item"><a href="#contact-me" class="link-ext main-link header-link link-box">Contact Me</a></li>
+        </ul>  
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}

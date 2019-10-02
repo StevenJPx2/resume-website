@@ -1,0 +1,275 @@
+/* GENERAL */
+
+@media only screen and (max-width:768px){
+    .sub-heading {
+        font-size: 1rem;
+    }
+
+    .post-heading {
+        font-size: 2.1rem;
+    }
+
+    .large {
+        font-size: 1.2rem !important;
+    }
+
+    a.main-link {
+        font-size: 1rem;
+    }
+}
+
+
+body {
+    background-color: #F2F2F2;
+}
+
+a.main-link {
+    color: var(--text-color-dark);
+    transition: color 0.1s ease-in;
+}
+
+.text-white {
+    color: white;
+}
+
+.sub-heading {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.post-heading {
+    font-weight: 700;
+}
+
+.post-details {
+    font-style: italic;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ------------------------ */
+
+
+
+/* NAVBAR */
+
+@media only screen and (max-width:768px) {
+    .nav-align {
+        align-items: flex-start !important;
+    }
+
+    #blog-logo {
+        height: 2rem;
+    }
+
+    #nav-back {
+        height: 100%;
+    }
+}
+
+@media only screen and (min-width:769px){
+    #back {
+        top: -130px;
+    }
+    
+    #back img {
+        top: -1.7px;
+    }
+
+    .nav-align {
+        left: -87px;
+    }
+
+    #nav-back {
+        height: 220px;
+    }
+
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: ease-in color 0.2s;
+}
+
+.nav-link:hover, .nav-link:active {
+    color: rgb(202, 202, 202) !important;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+#nav-back {
+    left: 0px;
+    opacity: 0.46;
+}
+
+/* ------------------------ */
+
+
+
+/* HEADER */
+
+@media only screen and (max-width:768px){
+    .header-cover .header-size {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .header-cover {
+        padding-top: 5rem;
+    }
+}
+
+@media only screen and (min-width:769px){
+    .header-cover .header-size {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    .header-cover {
+        padding-top: 12rem;
+    }
+
+    #post-header {
+        height: 40vw;
+    }
+}
+
+.header-size {
+    height: auto;
+}
+
+.header-cover {
+    background-size: cover;
+    z-index: -1;
+}
+
+/* ------------------------ */
+
+
+/* BLOG POST CARDS */
+
+@media only screen and (max-width:768px) {
+    .card-body .post-heading {
+        font-size: 2rem;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+    }
+
+    .card-body .main-link {
+        font-size: 0.8rem;
+    }
+
+    .card-img {
+        max-height: 14rem;
+    }
+}
+
+@media only screen and (min-width:769px) {
+    .card-body .post-heading {
+        font-size: 2.7rem;
+    }
+
+    .card-text {
+        font-size: 1.3rem;
+    }
+
+    .card-body .main-link {
+        font-size: 0.9rem;
+    }
+
+    .card-img {
+        height: 100%;
+    }
+}
+
+#blog-heading {
+    font-weight: 900;
+}
+
+.border-bottom {
+    border-color: #A0A0A0 !important;
+}
+
+.card {
+    border-radius: 0px;
+    border-width: 0px;
+    box-shadow: 0px 0px 65px 12px rgba(0,0,0,0.08);
+}
+
+.card-img {
+    border-radius: 0px;
+    object-fit: cover;
+    -o-object-fit: cover;
+}
+
+.card-body .post-details {
+    font-size: 1rem;
+}
+
+/* ------------------------ */
+
+
+/* BLOG POST */
+
+
+@media only screen and (max-width:768px) {
+    .post-title {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    .post-datettr {
+        font-style: italic;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .body::first-line {
+        line-height: 1.2rem;
+    }
+    
+    .body::first-letter {
+        font-size: 2rem;
+        font-weight: 900;
+    }
+}
+
+@media only screen and (min-width:769px) {
+    .post-title {
+        font-size: 2.9rem;
+    }
+
+    .post-datettr {
+        font-size: 1.6rem;
+    }
+
+    .body {
+        line-height: 2.4rem;
+        font-size: 1.4rem;
+    }
+    
+    .body::first-line {
+        line-height: 2.3rem;
+    }
+    
+    .body::first-letter {
+        font-size: 3rem;
+        font-weight: 900;
+    }
+}
+
+
+.post-title {
+    font-weight: 700;
+}
+
+.post-datettr {
+    font-style: italic;
+    font-weight: 500;
+}
+/* ------------------------ */

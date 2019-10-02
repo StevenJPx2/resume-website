@@ -25,7 +25,7 @@
 
 {% block navbar %}
     <nav class="navbar navbar-expand-xl bg-dark-c pad-navbar position-absolute z-7 w-100">
-        <a href="#" class="navbar-brand link-ext main-link header-link">Steven John</a></li>
+        <a href="#" class="navbar-brand link-ext main-link header-link">Steven John</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <section class="mod model-1">
@@ -38,8 +38,8 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto li-spacing">
-                <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Blog</a></li>
-                <li class="nav-item"><a href="{{ url_for('blog') }}" class="link-ext main-link header-link link-box">Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('blog') }}" class="link-ext main-link header-link link-box">Blog</a></li>
+                <li class="nav-item"><a href="#" class="link-ext main-link header-link link-box">Projects</a></li>
                 <li class="nav-item"><a href="#contact-me" class="link-ext main-link header-link link-box">Contact Me</a></li>
             </ul>  
         </div>
@@ -68,7 +68,7 @@
                         hoc epicurus in armatum hostem impetum fecisse aut.</p>
                 </div>
                 <div class="col-xl pad-left pad-top border-left">
-                    <a href="#">
+                    <a href="{{ url_for('blog') }}">
                         <img src="{{ url_for('static', filename='blog_logo.svg') }}" alt="Steven's Blog" id="blog-logo">
                     </a><br>
                     <div id="blog-sub-heading">Most Recent Post</div>
@@ -99,7 +99,7 @@
                         <div class="row no-gutters position-relative">
                             <div class="col-sm-5 img-ext">
                                 <a href="" class="img-play-link">
-                                    <img src="{{ url_for('static', filename='placeholder-img.jpg') }}" class="card-img placeholder-img img-ext" alt="...">
+                                    <img src="{{ img_urls['card_thumb'][0] }}" class="card-img placeholder-img img-ext" alt="...">
                                     <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
                                 </a>
                             </div>
@@ -119,7 +119,7 @@
                         <div class="row no-gutters position-relative">
                             <div class="col-sm-5 img-ext">
                                 <a href="" class="img-play-link">
-                                    <img src="{{ url_for('static', filename='placeholder-img.jpg') }}" class="card-img placeholder-img img-ext" alt="...">
+                                    <img src="{{ img_urls['card_thumb'][1] }}" class="card-img placeholder-img img-ext" alt="...">
                                     <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
                                 </a>
                             </div>

@@ -1,0 +1,11 @@
+flask
+flask-wtf
+flask-migrate
+flask-bootstrap
+flask-login
+flask-moment
+flask-sqlalchemy
+Flask-PyMongo
+werkzeug
+libgravatar
+python-dotenv

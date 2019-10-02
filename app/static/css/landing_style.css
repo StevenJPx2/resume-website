@@ -239,8 +239,8 @@ img.landing-img {
 
 .placeholder-img {
 	background-color: #171717;
-	object-fit: contain;
-	-o-object-fit: contain;
+	object-fit: cover;
+	-o-object-fit: cover;
 }
 
 

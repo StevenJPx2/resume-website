@@ -7,14 +7,8 @@
 {% block styles %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')|autoversion }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/card_style.css')|autoversion }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='css/blog_style.css')|autoversion }}">
-
-<style>
-    .header-cover {
-        background-image: linear-gradient(180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.46) 100%), url("{{ img_urls['header'] }}");
-    }
-</style>
-
 {% endblock %}
 
 {% block metas %}
@@ -23,8 +17,9 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/script.js')|autoversion }}"></script>
 <script src="{{ url_for('static', filename='js/blog_main_script.js')|autoversion }}"></script>
 {% endblock %}
@@ -47,15 +42,15 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mx-md-auto ml-auto align-items-center pl-4 pl-md-0 nav-align">
             <li class="nav-item mr-md-5 pt-3 pt-md-0 pb-3 pb-md-0">
-                <a href="#" class="main-link nav-link position-relative" id="left-link">Archive</a>
+                <a href="{{ url_for('blog_archive') }}" class="main-link nav-link-w position-relative" id="left-link">Archive</a>
             </li>
             <li class="nav-item mx-md-5 d-none d-md-inline">
-                <a href="{{ url_for('blog') }}" class="main-link nav-link position-relative" id="blog-logo-main">
+                <a href="{{ url_for('blog') }}" class="main-link nav-link-w position-relative" id="blog-logo-main">
                     <img src="{{ url_for('static', filename='blog_logo_black.svg') }}" alt="Steven's Blog">
                 </a>
             </li>
             <li class="nav-item pb-2 pb-md-0 ml-md-5">
-                <a href="#" class="main-link nav-link position-relative" id="right-link">Tags</a>
+                <a href="#" class="main-link nav-link-w position-relative" id="right-link">Tags</a>
             </li>
         </ul>  
     </div>
@@ -64,29 +59,8 @@
 
 {% block content %}
 
-<div class="container-fluid p-0">
-    <div class="header-size header-cover w-100">
-        <div class="d-flex align-items-center header-size z-2">
-            <div class="container px-5 px-md-4">
-                <h5 class="sub-heading text-white mb-3">Most Recent Post</h5>
-                <h1 class="post-heading text-white mb-3 mb-md-2">Finished my most anticipated project!</h1>
-                <h5 class="post-details text-white mb-4 mb-md-3">Sep 9, 2019 - 8 min read</h5>
-                <p class="large text-white">Filium morte multavit si sine causa? quae fuerit causa, 
-                    nollem me ab illo inventore veritatis et aut dolores eos, qui dolorem 
-                    aspernari ut ita ruant itaque turbent, ut aut rerum facilis est et 
-                    dolorem? sunt autem nusquam hoc epicurus in armatum hostem impetum 
-                    fecisse aut.
-                </p>
-                <a href="{{ url_for('blog_post', post_hash='1', n=2 ) }}" class="main-link text-white">Read more</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container pt-5 px-5 px-md-4">
-    <h1 class="border-bottom pb-4 mb-5" id="blog-heading">Blog</h1>
-    {% for i in range(blog_n) %}
-        {% include "post_preview.html" %}
-    {% endfor %}
-</div>
-    
+{% block app_content %}{% endblock %}
+
+{% include 'blog_footer.html' %}
+
 {% endblock %}

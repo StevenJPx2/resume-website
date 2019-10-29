@@ -1,0 +1,178 @@
+/* GENERAL */
+
+body {
+    background-color: #F7ECDA;
+}
+
+.border-bottom, .border-top, .border-left, .border-right {
+    border-color: #CCBCA1 !important;
+}
+
+/* ------------------------- */
+
+
+/* NAVBAR */
+
+@media only screen and (min-width:1200px) {
+    .nav-item .active {
+        background-color: #CCBCA1;
+    }
+    
+    .header-link:hover:not(.active) {
+        background-color: #E6D5BA;
+    }
+}
+
+
+a.header-link {
+	padding: 17px 15px 15px 20px;
+}
+
+a.link-ext {
+	color: var(--text-color-dark);
+	transition: color 0.1s ease-in;
+	-webkit-transition: color 0.1s ease-in;
+	-o-transition: color 0.1s ease-in;
+	-moz-transition: color 0.1s ease-in;
+}
+
+a.link-ext:hover:focus {
+	color: #171717;
+}
+
+.bg-dark-c {
+	background-color: #F7ECDA !important;
+}
+
+.pad-navbar {
+	padding: 3rem !important;
+}
+
+nav .bar {
+    background-color: var(--text-color-dark);
+}
+/* ------------------------- */
+
+
+/* CARD */
+
+@media only screen and (max-width:992px) {
+    .img-play {
+        top: 40%; 
+        left: 38%;
+    }
+}
+
+@media only screen and (min-width:993px) {
+    .img-play {
+        top: 40%; 
+        left: 26%;
+    }
+}
+
+.img-play-link {
+    height: 482px;
+}
+
+.card-img {
+    transform: none;
+    transition: transform 0.1s ease-in;
+	-webkit-transition: transform 0.1s ease-in;
+	-o-transition: transform 0.1s ease-in;
+	-moz-transition: transform 0.1s ease-in;
+}
+
+.img-play {
+	position: absolute;
+    display: none;
+    width: 165px;
+	margin: 0 auto; 
+    z-index: 100
+}
+
+.card:hover {
+    transform: none;
+}
+
+.card-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.img-play-link:hover .img-play {
+	display: block;
+}
+
+.img-play-link:hover .card-overlay {
+	display: block;
+}
+
+.img-play-link:hover .card-img {
+	transform: scale(1.1, 1.1);
+}
+
+/* ------------------------- */
+
+/* POST */
+
+@media only screen and (max-width:992px) {
+    #demo-div .img-play {
+        top: 47%;
+        left: 39%;
+    }
+}
+
+@media only screen and (min-width:993px) {
+    #demo-div .img-play {
+        top: 45%;
+        left: 43%;
+    }
+}
+
+.icon img {
+    width: 18px;
+    position: relative;
+    top: -1.7px;
+}
+
+.icon span {
+    margin-left: 0.7rem;
+}
+
+h1.post {
+    font-weight: 900;
+}
+
+#github img {
+    width: 24px;
+    top: -3.7px;
+}
+
+.demo-pic {
+    height: 40rem;
+    object-fit: cover;
+    -o-object-fit: cover;
+}
+
+#demo-div .img-play {
+    position: absolute;
+}
+
+.body {
+    font-size: 1.1rem;
+}
+
+/* ------------------------- */
+
+
+/* FOOTER */
+
+footer {
+    background-color: #DECFB6;
+}
+
+
+/* ------------------------- */

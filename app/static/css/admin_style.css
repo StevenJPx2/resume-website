@@ -1,0 +1,56 @@
+/* GENERAL */
+
+.navbar-collapse.collapse.in {
+    display: block !important;
+}
+
+.navbar-margin {
+    margin-top: 6rem;
+}
+
+/* ----------------------- */
+
+/* POST */
+
+@media only screen and (max-width:768px) {
+    .content img {
+        width: 50vw;
+    }
+}
+
+@media only screen and (min-width:769px) {
+    .content img {
+        width: 600px;
+    }
+}
+
+img.thumbnail {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+    -o-object-fit: cover;
+}
+
+.content img {
+    border-radius: 3px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* ----------------------- */
+
+
+/* EDIT/CREATE */
+
+textarea.form-control {
+    height: 60vh;
+}
+
+.form div {
+    margin-bottom: 1rem;
+}
+
+.form #submit {
+    margin-bottom: 5rem;
+}
+/* ----------------------- */

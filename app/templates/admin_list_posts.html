@@ -1,0 +1,43 @@
+{% extends 'admin_base.html' %}
+
+{% block app_content %}
+
+<div class="container navbar-margin">
+    <h1 class="display-1 text-center mb-5 mt-4">{{ title }}</h1>
+    {% if posts %}
+    <div class="list-group list-group-flush">
+        {% for post in posts %}
+        <a href="{{ url_for('admin_view', post_type=post_type, post_hash=post.pk) }}" class="list-group-item list-group-item-action">
+            <div class="row align-items-center">
+                <div class="col-5 col-md-4 col-lg-3">
+                    <img src="{{ post.cover_img.small_thumb }}" alt="thumbnail-{{ post.pk }}" class="thumbnail">
+                </div>
+                <div class="col-7 col-md-8 col-lg-9">
+                    <h5 class="mb-3">{{ post.title }}</h5>
+                    <div>{{ post.body_preview(25)|markdown }}</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-center text-muted">No posts to show.</p>
+    {% endif %}
+
+    <nav aria-label="..." class="mt-5 d-flex justify-content-center">
+        <ul class="pagination">
+            <li class="page-item{% if not prev_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ prev_url or '#' }}">
+                    <span aria-hidden="true">&larr;</span> Newer posts
+                </a>
+            </li>
+            <li class="page-item{% if not next_url %} disabled{% endif %}">
+                <a class="page-link" href="{{ next_url or '#' }}">
+                    Older posts <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+{% endblock %}

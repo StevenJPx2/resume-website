@@ -12,7 +12,7 @@ $(document).ready(function () {
          unStickyFlag = false;
 
 
-     $(window).scroll(function () {
+    $(window).scroll(function () {
         var a = $(window).scrollTop();
         var b = navbar.height();
        
@@ -27,8 +27,8 @@ $(document).ready(function () {
                     opacity: 0
                 })
                 navbar.animate({height: "103px"}, 600)
-                leftLink.animate({left: "223px"}, 600)
-                rightLink.animate({left: "-223px"}, 600)
+                leftLink.animate({left: "203px"}, 600)
+                rightLink.animate({left: "-203px"}, 600)
             } else {
                 // smallLogo.animate({height: "2rem"})
             }

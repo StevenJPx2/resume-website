@@ -1,0 +1,35 @@
+{% extends 'project_base.html' %}
+
+
+{% block app_content %}
+    <div class="container navbar-margin">
+        <h1 class="sub-header mb-5 pb-2">Projects</h1>
+        {% if posts %}
+            {% for post in posts %}
+            <div class="card mb-5">
+                <div class="row no-gutters">
+                    <div class="col-lg-4 no-clip">
+                        <a href="#" class="img-play-link">
+                            <img src="{{ post.cover_img.big_thumb }}" class="card-img" alt="card-img">
+                            <div class="card-overlay w-100 h-100 m-0"></div>
+                            <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
+                        </a>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card-body p-5">
+                            <a href="{{ url_for('project_post', project_hash=post.pk) }}" class="stretched-link link-ext">
+                                <h1 class="post-heading mb-3">{{ post.title }}</h1>
+                            </a>
+                            <h5 class="post-details mb-4">Last updated - {{ post.last_updated }}</h5>
+                            {{ post.body_preview(25)|markdown }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center text-muted">No posts to show.</p>
+        {% endif %}
+        
+    </div>
+{% endblock %}

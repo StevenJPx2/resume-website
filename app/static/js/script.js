@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     var navTogg = $(".navbar-toggler");
     var menu = $(".menu");
+    var footer = $("footer");
     var clickFlag = false;
 
     navTogg.click(function(){
@@ -20,4 +21,8 @@ $(document).ready(function(){
             }
         }
     })
+
+    if ($("body").height() < $(window).height()-40 && $(window).width() >= 768) {
+        footer.css("bottom", "0")
+    }
 })

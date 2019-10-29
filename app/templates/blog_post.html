@@ -11,7 +11,7 @@
 
 <style>
     .header-cover {
-        background-image: linear-gradient(180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.46) 100%), url("{{ head }}");
+        background-image: linear-gradient(180deg, rgba(0,0,0,0.16) 0%, rgba(0,0,0,0.46) 100%), url("{{ post.cover_img.full }}");
     }
 </style>
 
@@ -23,8 +23,9 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/script.js')|autoversion }}"></script>
 <script src="{{ url_for('static', filename='js/blog_post_script.js')|autoversion }}"></script>
 {% endblock %}
@@ -32,7 +33,7 @@
 {% block navbar %}
 <nav class="navbar fixed-top navbar-expand-md py-3 py-md-5 z-7 w-100">
     <div class="bg-black position-absolute w-100" id="nav-back"></div>
-    <a href="{{ url_for('blog') }}" class="pl-4 main-link nav-link position-relative" id="back">
+    <a href="{{ url_for('blog') }}" class="pl-4 main-link nav-link-w position-relative" id="back">
         <img src="{{ url_for('static', filename='arrow-ios-back-outline.svg') }}" alt="Back" class="position-relative">
         <span class="d-none d-md-inline-block ml-2">Back</span>
     </a>
@@ -49,15 +50,15 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto mx-md-auto align-items-center pl-4 pl-md-0 position-relative nav-align">
             <li class="nav-item mr-md-5 pt-3 pt-md-0 pb-3 pb-md-0">
-                <a href="#" class="main-link nav-link position-relative" id="left-link">Archive</a>
+                <a href="#" class="main-link nav-link-w position-relative" id="left-link">Archive</a>
             </li>
             <li class="nav-item mx-md-5 d-none d-md-inline">
-                <a href="{{ url_for('blog') }}" class="main-link nav-link position-relative" id="blog-logo-main">
+                <a href="{{ url_for('blog') }}" class="main-link nav-link-w position-relative" id="blog-logo-main">
                     <img src="{{ url_for('static', filename='blog_logo_black.svg') }}" alt="Steven's Blog">
                 </a>
             </li>
             <li class="nav-item pb-2 pb-md-0 ml-md-5">
-                <a href="#" class="main-link nav-link position-relative" id="right-link">Tags</a>
+                <a href="#" class="main-link nav-link-w position-relative" id="right-link">Tags</a>
             </li>
         </ul>  
     </div>
@@ -70,12 +71,14 @@
         <div class="d-flex align-items-end header-size pb-3 pb-md-5 z-2" id="post-header">
             <div class="container px-5 px-md-4">
                 <h1 class="post-title text-white mb-3 mb-md-2">{{ post.title }}</h1>
-                <h5 class="post-datettr text-white mb-4 mb-md-3">{{ post.date }} - {{ post.ttr }} min read</h5>
+                <h5 class="post-datettr text-white mb-4 mb-md-3">{{ post.return_date()[1] }} - {{ post.return_ttr() }} min read</h5>
             </div>
         </div>
     </div>
 </div>
 <div class="container px-5 px-md-4">
-    <p class="body mt-5">{{ post.body }}{{ post.body }}{{ post.body }}</p>
+    <div class="body mt-5">{{ post.body|markdown }}</div>
 </div>
+
+{% include 'blog_footer.html' %}
 {% endblock %}

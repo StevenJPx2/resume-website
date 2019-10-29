@@ -1,0 +1,40 @@
+{% extends 'admin_base.html' %}
+
+{% block app_content %}
+<div class="container navbar-margin">
+    <div class="row">
+        <div class="col-md mb-5 mb-md-0">
+            <div class="card">
+                <h2 class="card-header pl-4 mb-4">Blog Page</h2>
+                <div class="card-body text-center">
+                    <h2>{{ b_c }}</h2><h4>posts created</h4>
+                    <div class="row mt-5 mb-3">
+                        <div class="col">
+                            <a href="{{ url_for('admin_list', post_type='b') }}" class="card-link">View/Edit Posts</a>
+                        </div>
+                        <div class="col">
+                            <a href="{{ url_for('admin_post', post_type='b', type='c') }}" class="card-link">Create new post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="card">
+                <h2 class="card-header pl-4 mb-4">Project Page</h2>
+                <div class="card-body text-center">
+                    <h2>{{ p_c }}</h2><h4>posts created</h4>
+                    <div class="row mt-5 mb-3">
+                        <div class="col">
+                            <a href="{{ url_for('admin_list', post_type='p') }}" class="card-link">View/Edit Posts</a>
+                        </div>
+                        <div class="col">
+                            <a href="{{ url_for('admin_post', post_type='p', type='c') }}" class="card-link">Create new post</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

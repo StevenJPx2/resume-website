@@ -1,0 +1,66 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    Steven John
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')|autoversion }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/card_style.css')|autoversion }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/projects_style.css')|autoversion }}">
+{% endblock styles %}
+
+{% block metas %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/script.js')|autoversion }}"></script>
+    <script src="{{ url_for('static', filename='js/projects_main_script.js')|autoversion }}"></script>
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-expand-xl bg-dark-c pad-navbar fixed-top border-bottom z-7 w-100">
+        <a href="{{ url_for('index') }}" class="link-ext main-link header-link">Steven John</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <section class="mod model-1">
+                <div class="menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+              </section>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto li-spacing">
+                <li class="nav-item"><a href="{{ url_for('blog') }}" class="link-ext main-link header-link">Blog</a></li>
+                <li class="nav-item"><a href="{{ url_for('project_main') }}" class="link-ext main-link header-link active">Projects</a></li>
+            </ul>  
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+
+{% block app_content %}{% endblock %}
+
+<footer class="p-5 border-top w-100">
+    <div class="container text-center">
+        <h4 class="mb-3">Other links</h4>
+        <ul class="justify-content-center nav">
+            <li class="nav-item mr-5"><a href="{{ url_for('index') }}" class="link-ext">Main Site</a></li>
+            <li class="nav-item ml-5"><a href="{{ url_for('blog') }}" class="link-ext">Steven's Blog</a></li>
+        </ul>
+    </div>
+</footer>
+
+
+{% endblock %}

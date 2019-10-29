@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from flaskext.markdown import Markdown
-from flask_pymongo import PyMongo
+from flask_mongoengine import MongoEngine
+from flask_login import LoginManager
 from flask_moment import Moment
 from config import Config
 
@@ -9,8 +10,10 @@ app = Flask(__name__)
 app.config.from_object(Config)
 bootstrap = Bootstrap(app)
 md = Markdown(app)
-mongo = PyMongo(app)
+db = MongoEngine(app)
 moment = Moment(app)
+login = LoginManager(app)
+login.login_view = 'admin_login'
 
 
-from app import routes, models
+from app import routes, models, errors, bucket, utils

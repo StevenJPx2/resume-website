@@ -1,0 +1,55 @@
+{% extends 'admin_base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<div class="container navbar-margin col-9">
+    <h2 class="mt-4 mb-5">{% if type=='c' %} Create New Post {% else %} Edit Post {% endif %} </h2>
+    <form action="" enctype="multipart/form-data" method="post" class="form" role="form">
+        {{ form.hidden_tag() }}
+        <div class="form_group mb-4">
+            <label for="cover_img">
+                {{ form.cover_img.label }}
+            </label>
+            <input id="cover_img" name="cover_img" type="file">
+            {% if post %}
+            <input id="cover_img" name="cover_img" type="text" class="w-100 h-100 form-control" value="{{ post.cover_img.full }}" readonly>
+            {% endif %}
+        </div>
+
+        <div class="form_group">
+            <label for="imgs">
+                {{ form.imgs.label }}
+            </label>
+            <input id="imgs" name="imgs" type="file" multiple>
+            {% if post %}
+            <input id="imgs" name="imgs" type="text" class="w-100 h-100 form-control" value="{{ post.imgs }}" readonly>
+            {% endif %}
+        </div>
+
+        {% if form.github_url %}
+        <div class="form_group required">
+            <label for="github_url">
+                {{ form.github_url.label }}
+            </label>
+            <input id="github_url" name="github_url" class="form-control" type="text" {% if post %} value="{{post.github_url}}" {% endif %}>
+        </div>
+        {% endif %}
+
+        <div class="form_group required">
+            <label for="title">
+                {{ form.title.label }}
+            </label>
+            <input id="title" name="title" class="form-control" type="text" {% if post %} value="{{post.title}}" {% endif %}>
+        </div>
+
+        <div class="form_group required">
+            <label for="body">
+                {{ form.body.label }}
+            </label>
+            <textarea id="body" name="body" class="form-control">{% if post %}{{post.body}}{% endif %}</textarea>
+        </div>
+
+        <input class="btn btn-outline-primary" id="submit" name="submit" type="submit" value="Send">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'blog_base.html' %}
+
+{% block title %}
+Steven's Blog - Archive
+{% endblock %}
+
+{% block app_content %}
+<div class="container navbar-margin">
+    <div class="row">
+        <div class="col-3 d-none d-md-block border-right">
+            <div class="nav flex-column nav-pills">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Profile</a>
+                <a href="#" class="nav-link">Messages</a>
+                <a href="#" class="nav-link" >Settings</a>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action">
+                    Cras justo odio
+
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Dapibus ac facilisis in
+
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Morbi leo risus
+
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Porta ac consectetur ac
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

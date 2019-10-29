@@ -29,8 +29,8 @@ $(document).ready(function () {
                     height: "103px",
                     opacity: 1
                 }, 600)
-                leftLink.animate({left: "223px"}, 600)
-                rightLink.animate({left: "-223px"}, 600)
+                leftLink.animate({left: "203px"}, 600)
+                rightLink.animate({left: "-203px"}, 600)
                 backIcon.animate({top: "1px"}, 600)
             } else {
                 console.log("")

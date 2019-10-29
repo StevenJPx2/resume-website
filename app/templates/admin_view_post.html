@@ -1,0 +1,28 @@
+{% extends 'admin_base.html' %}
+
+{% block app_content %}
+
+<div class="container content navbar-margin">
+	<img src="{{ post.cover_img.full }}" alt="cover_img_{{ post.pk }}" class="rounded w-100 mb-5 mt-4">
+	<h2 class="mb-4">{{ post.title }}</h2>
+	{{ post.body|markdown }}
+	<div class="card my-5 px-5 py-3 px-auto">
+		<div class="row">
+			<div class="col d-flex">
+				<a href="{{ url_for('admin_post', post_type='b', type=post.pk ) }}" class="ml-auto">
+					<button type="button" class="btn btn-primary btn-lg">Edit</button>
+				</a>
+			</div>
+			<div class="col d-flex">
+				<button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#deleteModal">
+					Delete
+				</button>
+			</div>
+		</div>
+	</div>
+
+	{% include 'delete_modal.html' %}
+	
+</div>
+
+{% endblock %}

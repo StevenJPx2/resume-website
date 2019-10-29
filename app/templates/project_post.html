@@ -1,0 +1,23 @@
+{% extends 'project_base.html' %}
+
+{% block app_content %}
+<div class="container navbar-margin">
+    <a href="{{ url_for('project_main') }}" class="icon link-ext text-decoration-none">
+        <img src="{{ url_for('static', filename='arrow-back-outline.svg') }}" alt="back">
+        <span>Back to Project Page</span>
+    </a>
+    <div class="mt-5 mb-4 no-clip position-relative" id="demo-div">
+        <a href="#" class="img-play-link">
+            <img src="{{ head }}" alt="demo-pic" class="card-img demo-pic rounded">
+            <div class="card-overlay w-100 h-100 m-0"></div>
+            <img src="{{ url_for('static', filename='play-img-2.svg') }}" alt="play" class="img-play">
+        </a>
+    </div>
+    <a href="{{ post.urls['github'] }}" class="icon link-ext text-decoration-none" id="github">
+        <img src="{{ url_for('static', filename='github.svg') }}" alt="back">
+        <span>View Github repo</span>
+    </a>
+    <h1 class="mt-5 mb-4 post">{{ post.title }}</h1>
+    <p class="body">{{post.body}}{{post.body}}{{post.body}}</p>
+</div>
+{% endblock %}

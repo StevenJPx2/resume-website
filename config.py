@@ -5,5 +5,15 @@ class Config(object):
     UNSPLASH_ACCESS_KEY = '46fa2b12c274d628d2958c67bcbf9cbc8ca3221c3def10e004580023efa40ea3'
     NO_OF_PLACEHOLDER_IMAGES = 30
     AVG_READING_SPEED = 310
-    MONGO_DBNAME = 'restdb'
-    MONGO_URI = 'mongodb://localhost:27017/restdb'
+    MONGODB_SETTINGS = {
+        'db': 'resume',
+        'host' : 'mongodb://localhost/resume'
+    }
+    POSTS_PER_PAGE = 5
+    S3_KEY = 'AKIAJGDXEEQZAOCH4XOA'
+    S3_SECRET = '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'
+    S3_BUCKET = 'resume-website-flask'
+    PROJECT_ROOT = 'static'
+    IMAGE_SIZES = [1, (600,0), (200,200), (1024,1024)]
+    IMAGE_SIZE_FORMAT = ["full", "post", "small_thumb", "big_thumb"]
+    IMAGE_QUALITY = 95

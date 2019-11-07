@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, url_for, redirect, request, abort, flash
+from flask import render_template, url_for, redirect, request, abort, flash, jsonify
 from flask_login import current_user, login_user, logout_user, login_required
 from werkzeug.urls import url_parse
 from werkzeug.utils import secure_filename
@@ -129,7 +129,13 @@ def admin_post():
 						github_url=form.github_url.data
             	)
 			post.save()
-			imgs = post.imgs + [Image(**preprocess_img_and_upload(img, post.pk)) for img in form.imgs.data] if not form.imgs.data else post.imgs
+			clean_form_imgs = list(filter(lambda x: not isinstance(x, str), form.imgs.data))
+			try:
+				if not clean_form_imgs[0].filename:
+					clean_form_imgs = []
+			except:
+				pass
+			imgs = post.imgs + [Image(**preprocess_img_and_upload(img, post.pk)) for img in clean_form_imgs] if clean_form_imgs else post.imgs
 			cover_img = Image(**preprocess_img_and_upload(form.cover_img.data, post.pk)) if form.cover_img.data else post.cover_img
 
    
@@ -199,3 +205,7 @@ def autoversion_filter(filename):
 		return filename
 	newfilename = "{0}?v={1}".format(filename, timestamp)
 	return newfilename
+
+@app.template_filter('img_display')
+def img_display(img_list):
+    return list(map(lambda x: x.full, img_list))

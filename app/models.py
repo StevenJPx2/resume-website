@@ -12,6 +12,10 @@ class Image(db.EmbeddedDocument):
     small_post = db.StringField(db_field="Small Post")
     small_thumb = db.StringField(db_field="Small Thumb")
     big_thumb = db.StringField(db_field="Big Thumb")
+
+class DemoMeta(db.EmbeddedDocument):
+    HAS_ROUTES = db.BooleanField(db_field="Routes")
+    ROUTE_PATH = db.StringField(db_field="Route Path")
     
 class Post(db.Document):
 	title = db.StringField(db_field='Title', max_length=120, required=True)
@@ -22,8 +26,10 @@ class Post(db.Document):
  
 	meta = {'allow_inheritance': True}
   
-	def body_preview(self, n=45):
-		return " ".join(self.body.split(" ")[:n]) + "..." if self.body else '...'
+	def body_preview(self, n=45, remove_imgs=True):
+		preview = " ".join(self.body.split(" ")[:n]) + "..." if self.body else '...'
+		if remove_imgs: preview = re.sub(r"!\[.*\]\(.*\)", "", preview)
+		return preview
   
 	def return_date(self):
 		return (self.date.strftime("%a"), self.date.strftime("%b %d, %Y"))
@@ -32,6 +38,7 @@ class Post(db.Document):
 class ProjectPost(Post):
 	github_url = db.URLField(db_field='GitHub URL')
 	last_updated = db.DateTimeField(db_field='Last Updated', default=datetime.utcnow())
+	live_demo = db.EmbeddedDocumentField(DemoMeta, db_field='Live Demo')
  
 	meta = {'ordering': ['-last_updated']}
 	

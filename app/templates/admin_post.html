@@ -22,7 +22,7 @@
             </label>
             <input id="imgs" name="imgs" type="file" multiple>
             {% if post %}
-            <input id="imgs" name="imgs" type="text" class="w-100 h-100 form-control" value="{{ post.imgs }}" readonly>
+            <p class="h-100 w-100">{{ post.imgs|img_display }}</p> 
             {% endif %}
         </div>
 
@@ -31,7 +31,7 @@
             <label for="github_url">
                 {{ form.github_url.label }}
             </label>
-            <input id="github_url" name="github_url" class="form-control" type="text" {% if post %} value="{{post.github_url}}" {% endif %}>
+            <input id="github_url" name="github_url" class="form-control" type="text" {% if post %} value="{{ post.github_url }}" {% endif %}>
         </div>
         {% endif %}
 
@@ -39,14 +39,14 @@
             <label for="title">
                 {{ form.title.label }}
             </label>
-            <input id="title" name="title" class="form-control" type="text" {% if post %} value="{{post.title}}" {% endif %}>
+            <input id="title" name="title" class="form-control" type="text" {% if post %} value="{{ post.title }}" {% endif %}>
         </div>
 
         <div class="form_group required">
             <label for="body">
                 {{ form.body.label }}
             </label>
-            <textarea id="body" name="body" class="form-control">{% if post %}{{post.body}}{% endif %}</textarea>
+            <textarea id="body" name="body" class="form-control">{% if post %}{{ post.body }}{% endif %}</textarea>
         </div>
 
         <input class="btn btn-outline-primary" id="submit" name="submit" type="submit" value="Send">

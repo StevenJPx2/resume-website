@@ -4,14 +4,11 @@ flask-migrate
 flask-bootstrap
 flask-login
 flask-moment
-flask-sqlalchemy
-Flask-PyMongo
+wtforms-json
 flask-mongoengine
 boto3
 botocore
 aws
 awscli
 werkzeug
-libgravatar
 python-dotenv
-flask-thumbnails-s3

@@ -67,7 +67,7 @@ def save_images(img_list, sizes, filename="picture", filetype="jpg"):
             img.save(f"{size}-{filename}.{filetype}")
             
 def upload_s3(key, obj, name):
-    s3 = boto3.resource('s3', aws_access_key_id=app.config["S3_KEY"], aws_secret_access_key=app.config["S3_SECRET"])
+    s3 = boto3.resource('s3')
     bucket = s3.Bucket(app.config['S3_BUCKET'])
     obj.seek(0)
     bucket.upload_fileobj(obj, f"{key}/{name}", ExtraArgs={

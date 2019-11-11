@@ -12,8 +12,6 @@ class Config(object):
     }
     
     POSTS_PER_PAGE = 5
-    S3_KEY = 'AKIAJGDXEEQZAOCH4XOA'
-    S3_SECRET = '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'
     S3_BUCKET = 'resume-website-flask'
     PROJECT_ROOT = 'static'
     IMAGE_SIZES = [1, (600,0), (200,200), (1024,1024)]
